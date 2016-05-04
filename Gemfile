@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'hirb'
 gem 'simple_form'
 gem 'paperclip', '~> 4.2' #at the writing of this post
