@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pg', '~> 0.15'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'hirb'
 gem 'simple_form'
