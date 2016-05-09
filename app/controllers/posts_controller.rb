@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destory]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   # before action sets the varaible set post as an action for the following actions
 
   def index
@@ -28,14 +28,17 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      flash[:success] = "Your post has been updated!"
       redirect_to(post_path(@post))
     else
+      flash.now[:alert] = "Your post couldn't be updated! Please try again."
       render :edit
     end
   end
 
   def destroy
     @post.destroy
+    flash[:success] = "Your post has been deleted!"
     redirect_to posts_path
   end
 
@@ -45,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(param[:id])
+    @post = Post.find(params[:id])
   end
 
 end
