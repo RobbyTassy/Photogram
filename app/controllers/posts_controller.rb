@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  # before action sets the varaible set post as an action for the following actions
+  # before action sets the variable set post as an action for the following actions
 
   def index
     @post = Post.all
